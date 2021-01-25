@@ -7,6 +7,9 @@ docs:
 
 - title: Needs
   url: need.html
+
+- title: Features (wip)
+  url: features.html
 ---
 ## Team board project
 <ul>

@@ -2,6 +2,8 @@
 docs_list_title: Team board project
 docs:
 
+- title: Conception
+
 - title: Product Vision
   url: product/product-vision.html
 
@@ -10,6 +12,12 @@ docs:
 
 - title: Features (wip)
   url: product/features.html
+
+- title: Architecture
+
+- title: Target Paltform
+  url: architecture/target_platform.md
+
 ---
 ## Team board project
 <ul>

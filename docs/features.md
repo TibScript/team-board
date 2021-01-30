@@ -103,6 +103,6 @@
 
 # 5
 
-### IHM
+### Notification
 
 * Notify the user when an event occurs (creation, cancellation, modification, ...)

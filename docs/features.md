@@ -100,3 +100,9 @@
 
 * Permit to choose the place of each element on a profile
 * Permit to choose the place of each element on a tree
+
+# 5
+
+### IHM
+
+* Notify the user when an event occurs (creation, cancellation, modification, ...)

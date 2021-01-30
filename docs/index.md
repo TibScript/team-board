@@ -3,13 +3,13 @@ docs_list_title: Team board project
 docs:
 
 - title: Product Vision
-  url: product-vision.html
+  url: product/product-vision.html
 
 - title: Needs
-  url: need.html
+  url: product/need.html
 
 - title: Features (wip)
-  url: features.html
+  url: product/features.html
 ---
 ## Team board project
 <ul>

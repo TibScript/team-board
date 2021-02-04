@@ -29,16 +29,12 @@
 * see a group profile
 * see character of the group in the group profile
 
+## 2
+
 ### Search
 
 * search a group or a character
 * search a character which is in multiple groupe
-
-### IHM
-
-* permit to choose light or dark theme
-
-## 2
 
 ### Skill
 
@@ -79,6 +75,10 @@
 * permit to add relationship between character
 * permit to remove relationship between character
 
+### IHM
+
+* permit to choose light or dark theme
+
 # 3
 
 ### User
@@ -90,6 +90,10 @@
 * permit to edit a node of the shared tree
 * permit to edit an attribut of the shared tree
 
+### Notification
+
+* Notify the user when an event occurs (creation, cancellation, modification, ...)
+
 # 4
 
 ### User
@@ -100,9 +104,3 @@
 
 * Permit to choose the place of each element on a profile
 * Permit to choose the place of each element on a tree
-
-# 5
-
-### Notification
-
-* Notify the user when an event occurs (creation, cancellation, modification, ...)

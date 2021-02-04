@@ -16,7 +16,7 @@ docs:
 - title: Architecture
 
 - title: Target Paltform
-  url: architecture/target_platform.md
+  url: architecture/target_platform.html
 
 ---
 ## Team board project

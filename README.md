@@ -1,6 +1,8 @@
 # team-board
 
-The doumentation is available at [tibscript.github.io/team-board/][doc_url]
+The documentation is available at [tibscript.github.io/team-board/][doc_url]
+
+![logo][logo_img]
 
 ## Usefull links
 
@@ -8,5 +10,6 @@ The doumentation is available at [tibscript.github.io/team-board/][doc_url]
 * [How to make a Product doc][product_doc]
 
 [product_doc]: https://hubvisory.com/blog/comment-bien-definir-sa-vision-produit/
-[jekyll_toc]: https://jekyllrb.com/tutorials/navigation/#scenario-1-basic-list
-[doc_url]: https://tibscript.github.io/team-board/
+[jekyll_toc]:  https://jekyllrb.com/tutorials/navigation/#scenario-1-basic-list
+[doc_url]:     https://tibscript.github.io/team-board/
+[logo_img]:    ./logo.drawio.svg

@@ -2,11 +2,6 @@
 docs_list_title: Team board project
 docs:
 
-- title: Dev Work
-
-- title: Contributing
-  url: ../CONTRIBUTING.html
-
 - title: Conception
 
 - title: Product Vision
@@ -30,6 +25,10 @@ docs:
 ## Team board project
 <ul>
 {% for item in page.docs %}
+  {% if item.url %}
     <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% else %}
+    <h3>{{ item.title }}</h3>
+  {% endif %}
 {% endfor %}
 </ul>

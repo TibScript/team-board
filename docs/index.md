@@ -2,6 +2,11 @@
 docs_list_title: Team board project
 docs:
 
+- title: Dev Work
+
+- title: Contributing
+  url: ../CONTRIBUTING.html
+
 - title: Conception
 
 - title: Product Vision
@@ -12,6 +17,9 @@ docs:
 
 - title: Features (wip)
   url: product/features.html
+
+- title: Release
+  url: product/release.html
 
 - title: Architecture
 

@@ -1,0 +1,46 @@
+{
+  "name": "team-board",
+  "description": "The doumentation is available at [tibscript.github.io/team-board/][doc_url]",
+  "version": "0.0.0",
+  "main": "none",
+  "scripts": {
+    "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false",
+    "changelog-debug": "auto-changelog --template changelog-template.hbs -p --template json --output changelog-data.json"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TibScript/team-board.git"
+  },
+  "author": "Me and him",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/TibScript/team-board/issues"
+  },
+  "homepage": "https://github.com/TibScript/team-board#readme",
+  "devDependencies": {
+    "auto-changelog": "^2.2.1"
+  },
+  "auto-changelog": {
+    "commitLimit": false,
+    "unreleased": true,
+    "issueUrl": "https://github.com/TibScript/team-board/issues",
+    "replaceText": {
+      "^break\\((.*)\\)": "[$1] ",
+      "^ci\\((.*)\\)": "[$1] ",
+      "^docs\\((.*)\\): ": "[$1] ",
+      "^feat\\((.*)\\)": "[$1] ",
+      "^fix\\((.*)\\)": "[$1] ",
+      "^refactor\\((.*)\\)": "[$1] ",
+      "^style\\((.*)\\)": "[$1] ",
+      "^test\\((.*)\\)": "[$1] ",
+      "^ #(.{6})\\s": "[$1](https://github.com/TibScript/team-board/issues/$1) - "
+    },
+    "includeBranch": [
+      "develop",
+      "master"
+    ]
+  }
+}

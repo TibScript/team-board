@@ -1,0 +1,70 @@
+{{#each releases}}
+# {{title}}
+[{{isoDate}}]
+
+{{! lit commits with feature: in message, use feature(smthing):}}
+{{#commit-list
+  commits
+  heading='### Features'
+  message='(feat\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{! use fix(smthing): }}
+{{#commit-list
+  commits
+  heading='### Fixes'
+  message='(fix\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{! user break(smthing): }}
+{{#commit-list
+  commits
+  heading='### Breaking changes'
+  message='(break\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{! user docs(smthing): }}
+{{#commit-list
+  commits
+  heading='### Documentation changes'
+  message='(docs\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{! user ci(smthing): }}
+{{#commit-list
+  commits
+  heading='### CI changes'
+  message='(ci\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{! user ci(smthing): }}
+{{#commit-list
+  commits
+  heading='### Test changes'
+  message='(test\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{! all that is not in previous category}}
+{{#commit-list
+  commits
+  heading='### Without Category'
+  exclude='(break\()|(docs\()|(feat\()|(fix\()'
+}}
+* {{subject}} ([`{{shorthash}}`]({{href}}))
+{{/commit-list}}
+
+{{/each}}
+
+Meow !

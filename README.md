@@ -2,6 +2,10 @@
 
 The doumentation is available at [tibscript.github.io/team-board/][doc_url]
 
+## Command
+
+* `npm run changelog`: generate changelog
+
 ## Usefull links
 
 * [How to manage toc by Jekyll][jekyll_toc]

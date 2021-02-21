@@ -2,7 +2,7 @@
 # {{title}}
 [{{isoDate}}]
 
-{{! lit commits with feature: in message, use feature(smthing):}}
+{{! lit commits with feature: in message, use feat(smthing):}}
 {{#commit-list
   commits
   heading='### Features'
@@ -47,7 +47,7 @@
 * {{subject}} ([`{{shorthash}}`]({{href}}))
 {{/commit-list}}
 
-{{! user ci(smthing): }}
+{{! user test(smthing): }}
 {{#commit-list
   commits
   heading='### Test changes'
@@ -60,7 +60,7 @@
 {{#commit-list
   commits
   heading='### Without Category'
-  exclude='(break\()|(docs\()|(feat\()|(fix\()'
+  exclude='(break\()|(ci\()|(docs\()|(feat\()|(fix\()|(test\()'
 }}
 * {{subject}} ([`{{shorthash}}`]({{href}}))
 {{/commit-list}}

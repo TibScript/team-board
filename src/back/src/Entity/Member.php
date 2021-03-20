@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\GroupRepository;
+use App\Repository\MemberRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=GroupRepository::class)
- * @ORM\Table(name="`group`")
+ * @ORM\Entity(repositoryClass=MemberRepository::class)
+ * @ORM\Table(name="`member`")
  */
-class Group
+class Member
 {
     /**
      * @ORM\Id
@@ -27,12 +27,6 @@ class Group
      * @ORM\Column(type="string", length=255)
      */
     private $parents;
-
-    private $members;
-
-    private $childGroups;
-
-    private $imGroot;
 
     public function getId(): ?int
     {

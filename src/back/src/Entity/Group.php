@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GroupRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,15 +26,31 @@ class Group
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToMany(targetEntity=Group::class, inversedBy="childGroup")
      */
     private $parents;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Group::class, mappedBy="parents")
+     */
+    private $childGroup;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $imGroot;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Member::class, mappedBy="parents")
+     */
     private $members;
 
-    private $childGroups;
-
-    private $imGroot;
+    public function __construct()
+    {
+        $this->parents = new ArrayCollection();
+        $this->childGroup = new ArrayCollection();
+        $this->members = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -47,6 +65,96 @@ class Group
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getParents(): Collection
+    {
+        return $this->parents;
+    }
+
+    public function addParent(self $parent): self
+    {
+        if (!$this->parents->contains($parent)) {
+            $this->parents[] = $parent;
+        }
+
+        return $this;
+    }
+
+    public function removeParent(self $parent): self
+    {
+        $this->parents->removeElement($parent);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getChildGroup(): Collection
+    {
+        return $this->childGroup;
+    }
+
+    public function addChildGroup(self $childGroup): self
+    {
+        if (!$this->childGroup->contains($childGroup)) {
+            $this->childGroup[] = $childGroup;
+            $childGroup->addParent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChildGroup(self $childGroup): self
+    {
+        if ($this->childGroup->removeElement($childGroup)) {
+            $childGroup->removeParent($this);
+        }
+
+        return $this;
+    }
+
+    public function getImGroot(): ?bool
+    {
+        return $this->imGroot;
+    }
+
+    public function setImGroot(?bool $imGroot): self
+    {
+        $this->imGroot = $imGroot;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Member[]
+     */
+    public function getMembers(): Collection
+    {
+        return $this->members;
+    }
+
+    public function addMember(Member $member): self
+    {
+        if (!$this->members->contains($member)) {
+            $this->members[] = $member;
+            $member->addParent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMember(Member $member): self
+    {
+        if ($this->members->removeElement($member)) {
+            $member->removeParent($this);
+        }
 
         return $this;
     }

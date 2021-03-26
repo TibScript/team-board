@@ -41,7 +41,7 @@ class Group
     private $imGroot;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Member::class, mappedBy="parents")
+     * @ORM\ManyToMany(targetEntity=Member::class, mappedBy="parents", cascade={"persist"})
      */
     private $members;
 

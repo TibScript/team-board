@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\MemberRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -17,11 +18,13 @@ class Member
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("member:detail")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("member:detail")
      */
     private $name;
 

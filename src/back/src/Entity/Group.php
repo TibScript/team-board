@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\GroupRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,11 +17,13 @@ class Group
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
+     * @Groups("group:detail")
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
+     * @Groups("group:detail")
      * @ORM\Column(type="string", length=255)
      */
     private $name;
@@ -36,11 +39,13 @@ class Group
     private $childGroup;
 
     /**
+     * @Groups("group:detail")
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $imGroot;
 
     /**
+     * @Groups("group:detail")
      * @ORM\ManyToMany(targetEntity=Member::class, mappedBy="parents", cascade={"persist"})
      */
     private $members;

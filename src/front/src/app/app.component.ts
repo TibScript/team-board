@@ -1,7 +1,8 @@
 import {NestedTreeControl} from '@angular/cdk/tree';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
-import { from } from 'rxjs';
+import { Group } from 'src/models/group.model';
+import { GroupHttpService } from 'src/services/group.http.service';
 
 import { Tree } from './tree'
 import { TreeService } from './tree.service'
@@ -43,15 +44,21 @@ const TREE_DATA: Tree[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Team Board';
   treeControl = new NestedTreeControl<Tree>(node => node.children);
   dataSource = new MatTreeNestedDataSource<Tree>();
+  groups$: Promise<Group[]>;
 
   constructor(
-    private treeService: TreeService
+    private treeService: TreeService,
+    private groupService: GroupHttpService,
   ) {
     this.dataSource.data = TREE_DATA;
+  }
+
+  ngOnInit() {
+    this.groups$ = this.groupService.getGroups();
   }
 
   hasChild = (_: number, node: Tree) => !!node.children && node.children.length > 0;

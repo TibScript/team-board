@@ -7,10 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GroupController extends AbstractController
+class GroupsController extends AbstractController
 {
     /**
-     * @Route("/group", name="group")
+     * @Route("/groups", name="groups")
      */
     public function index(
         GetGroups $getGroup

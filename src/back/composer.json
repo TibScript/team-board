@@ -53,10 +53,15 @@
         "server": [
             "php -S localhost:8000 -t public"
         ],
-        "lint" : [
+        "lint": [
             "phpcs --standard=PSR1,PSR2 src"
         ],
-        "db:init": ["docker run --rm --name mysql -e MYSQL_ROOT_PASSWORD='root' -e MYSQL_DATABASE='symfony' -e MYSQL_USER='symfony' -e MYSQL_PASSWORD='symfony' -d -p 3306:3306 mysql --default-authentication-plugin=mysql_native_password"],
+        "db:init": [
+            "docker run --rm --name mysql -e MYSQL_ROOT_PASSWORD='root' -e MYSQL_DATABASE='symfony' -e MYSQL_USER='symfony' -e MYSQL_PASSWORD='symfony' -d -p 3306:3306 mysql --default-authentication-plugin=mysql_native_password"
+        ],
+        "db:vinit": [
+            "docker run --rm --name mysql -v $(pwd)/mnt-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD='root' -e MYSQL_DATABASE='symfony' -e MYSQL_USER='symfony' -e MYSQL_PASSWORD='symfony' -d -p 3306:3306 mysql --default-authentication-plugin=mysql_native_password"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"

@@ -21,8 +21,8 @@ class GroupsController extends AbstractController
         GetGroups $getGroup,
         GetResponses $getResponses
     ): Response {
-        return $getResponses->getJsonResponses(
-            $getGroup->getAllGroupsInJson()
+        return $getResponses->fromPhpArrayToJsonResponses(
+            $getGroup->getAllGroupsInPhpArray()
         );
     }
 
@@ -34,8 +34,8 @@ class GroupsController extends AbstractController
         GetGroups $getGroup,
         GetResponses $getResponses
     ): Response {
-        return $getResponses->getJsonResponses(
-            $getGroup->getOneGroupsInJson($id)
+        return $getResponses->fromPhpArrayToJsonResponses(
+            $getGroup->getOneGroupsInPhpArray($id)
         );
     }
 }

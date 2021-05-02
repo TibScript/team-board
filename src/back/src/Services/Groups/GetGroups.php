@@ -18,6 +18,32 @@ class GetGroups
     $this->serializer       = $serializer;
   }
 
+  public function getAllGroupsInPhpArray()
+  {
+    $groups = $this->groupRepository->findall();
+
+    return $this->normalizedGroups(
+      $groups,
+      [
+        'group:detail',
+        'member:detail'
+      ]
+    );
+  }
+
+  public function getOneGroupsInPhpArray($id)
+  {
+    $groups = $this->groupRepository->find($id);
+
+    return $this->normalizedGroups(
+      $groups,
+      [
+        'group:detail',
+        'member:detail'
+      ]
+    );
+  }
+
   public function getAllGroupsInJson()
   {
     $groups = $this->groupRepository->findall();

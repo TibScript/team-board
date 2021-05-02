@@ -8,7 +8,7 @@ class GetResponses
   public function __construct()
   {}
 
-  public function getJsonResponses($normalizedObject) 
+  public function fromPhpArrayToJsonResponses($normalizedObject)
   {
 
     return new JsonResponse(
@@ -17,7 +17,7 @@ class GetResponses
       ],
       200,
       [],
-      true
+      false
     );
   }
 }

@@ -15,6 +15,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class GroupsController extends AbstractController
 {
     /**
+     * @Route("/root/", name="list-root", methods={"GET"})
+     */
+    public function getAllRootGroups(
+        GetGroups $getGroup,
+        GetResponses $getResponses
+    ): Response {
+        return $getResponses->fromPhpArrayToJsonResponses(
+            $getGroup->getAllRootGroupsInPhpArray()
+        );
+    }
+
+    /**
      * @Route("/", name="list", methods={"GET"})
      */
     public function getAllGroups(

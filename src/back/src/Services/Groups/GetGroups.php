@@ -2,6 +2,8 @@
 namespace App\Services\Groups;
 
 use App\Repository\GroupRepository;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -9,13 +11,28 @@ class GetGroups
 {
   public function __construct(
     GroupRepository $groupRepository,
-    NormalizerInterface $normalizers,
+    NormalizerInterface $normalizer,
     SerializerInterface $serializer
   )
   {
     $this->groupRepository  = $groupRepository;
-    $this->normalizers      = $normalizers;
+    $this->normalizer       = $normalizer;
     $this->serializer       = $serializer;
+  }
+
+  private function getDefaultNormalizerOption($tags) {
+    return [
+      'groups' => $tags,
+      AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context) {
+        return $object->getId();
+      },
+      AbstractObjectNormalizer::ENABLE_MAX_DEPTH => true
+    ];
+  }
+
+  public function getAllRootGroupsInPhpArray()
+  {
+    return [];
   }
 
   public function getAllGroupsInPhpArray()
@@ -31,7 +48,7 @@ class GetGroups
     );
   }
 
-  public function getOneGroupsInPhpArray($id)
+  public function getOneGroupInPhpArray($id)
   {
     $groups = $this->groupRepository->find($id);
 
@@ -58,7 +75,7 @@ class GetGroups
     );
   }
 
-  public function getOneGroupsInJson($id)
+  public function getOneGroupInJson($id)
   {
     $groups = $this->groupRepository->find($id);
 
@@ -77,10 +94,10 @@ class GetGroups
   */
   private function normalizedGroups($groups, $tags) 
   {
-    return $this->normalizers->normalize(
+    return $this->serializer->normalize(
       $groups,
       null,
-      ['groups' => $tags]
+      $this->getDefaultNormalizerOption($tags)
     );
   }
 
@@ -89,10 +106,10 @@ class GetGroups
    */
   private function serializedGroups($groups, $format, $tags)
   {
-    return $this->serializer->serialize(
-      $groups,
-      $format,
-      ['groups' => $tags]
-    );
+      return $this->serializer->serialize(
+        $groups,
+        $format,
+        $this->getDefaultNormalizerOption($tags)
+      );
   }
 }

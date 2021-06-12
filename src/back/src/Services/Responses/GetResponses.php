@@ -12,12 +12,16 @@ class GetResponses
   {
 
     return new JsonResponse(
-      [
-        'data' => $normalizedObject,
-      ],
+      $this->getResponsesFormat($normalizedObject),
       200,
       [],
       false
     );
+  }
+
+  public function getResponsesFormat($normalizedObject) {
+    return [
+      'data' => $normalizedObject,
+    ];
   }
 }

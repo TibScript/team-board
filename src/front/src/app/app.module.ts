@@ -20,10 +20,32 @@ import { MatTreeModule } from '@angular/material/tree'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GroupViewComponent } from './group/view/view.component';
+import { GroupEditComponent } from './group/edit/edit.component';
+import { MemberViewComponent } from './member/view/view.component';
+import { MemberEditComponent } from './member/edit/edit.component';
+import { TreeViewComponent } from './tree/view/view.component';
+import { TreeEditComponent } from './tree/edit/edit.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { RightbarComponent } from './layout/rightbar/rightbar.component';
+import { LeftbarComponent } from './layout/leftbar/leftbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GroupEditComponent,
+    GroupViewComponent,
+    MemberEditComponent,
+    MemberViewComponent,
+    TreeEditComponent,
+    TreeViewComponent,
+    LayoutComponent,
+    HeaderComponent,
+    RightbarComponent,
+    LeftbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

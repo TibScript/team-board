@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tree-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.less']
+  templateUrl: './tree-edit.component.html',
+  styleUrls: ['./tree-edit.component.less']
 })
 export class TreeEditComponent implements OnInit {
 

@@ -1,4 +1,8 @@
+<!--
 <app-layout [title]='title' [groups]='groups'></app-layout>
+-->
+
+<app-layout [title]='title' [groups]='(groups$ | async)?.data'></app-layout>
 
 <!-- DEBUG json variable
 <pre>{{ groups | json }}</pre>

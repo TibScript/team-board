@@ -20,12 +20,12 @@ import { MatTreeModule } from '@angular/material/tree'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GroupViewComponent } from './group/view/view.component';
-import { GroupEditComponent } from './group/edit/edit.component';
-import { MemberViewComponent } from './member/view/view.component';
-import { MemberEditComponent } from './member/edit/edit.component';
-import { TreeViewComponent } from './tree/view/view.component';
-import { TreeEditComponent } from './tree/edit/edit.component';
+import { GroupViewComponent } from './group/group-view/group-view.component';
+import { GroupEditComponent } from './group/group-edit/group-edit.component';
+import { MemberViewComponent } from './member/member-view/member-view.component';
+import { MemberEditComponent } from './member/member-edit/member-edit.component';
+import { TreeViewComponent } from './tree/tree-view/tree-view.component';
+import { TreeEditComponent } from './tree/tree-edit/tree-edit.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { RightbarComponent } from './layout/rightbar/rightbar.component';

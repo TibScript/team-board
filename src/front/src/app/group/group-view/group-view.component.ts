@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-group-view',
-  templateUrl: './view.component.html',
-  styleUrls: ['./view.component.less']
+  templateUrl: './group-view.component.html',
+  styleUrls: ['./group-view.component.less']
 })
 export class GroupViewComponent implements OnInit {
 

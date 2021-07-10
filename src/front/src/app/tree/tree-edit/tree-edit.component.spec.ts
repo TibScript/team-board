@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GroupEditComponent } from './edit.component';
+import { TreeEditComponent } from './tree-edit.component';
 
-describe('GroupEditComponent', () => {
-  let component: GroupEditComponent;
-  let fixture: ComponentFixture<GroupEditComponent>;
+describe('TreeEditComponent', () => {
+  let component: TreeEditComponent;
+  let fixture: ComponentFixture<TreeEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupEditComponent ]
+      declarations: [ TreeEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GroupEditComponent);
+    fixture = TestBed.createComponent(TreeEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

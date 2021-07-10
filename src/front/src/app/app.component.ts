@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.groups$ = this.groupService.getGroups();
-    this.groups=GROUP_TEST;
+    this.groups = GROUP_TEST;
   }
 
 }

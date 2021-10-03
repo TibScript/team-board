@@ -39,7 +39,7 @@ class RpgFixtures extends Fixture implements FixtureGroupInterface
             ) {
                 for ($i_member = 0; $i_member < $expatByGroup; $i_member++) {
                     $newMember = new Member();
-                    $newMember->setName($this->faker->name);
+                    $newMember->setName($this->faker->name());
                     $members[] = $newMember;
                     $group->addMember($newMember);
                 }
@@ -49,7 +49,7 @@ class RpgFixtures extends Fixture implements FixtureGroupInterface
             ) {
                 for ($i_member = 0; $i_member < $memberByMainGroup; $i_member++) {
                     $newMember = new Member();
-                    $newMember->setName($this->faker->name);
+                    $newMember->setName($this->faker->name());
                     $group->addMember($newMember);
                 }
             }
@@ -61,7 +61,7 @@ class RpgFixtures extends Fixture implements FixtureGroupInterface
 
         for ($i_member = 0; $i_member < $memberBySpecGroup; $i_member++) {
             $newMember = new Member();
-            $newMember->setName($this->faker->name);
+            $newMember->setName($this->faker->name());
             $groups['agri']->addMember($newMember);
             if ($i_member == 0 || $i_member == 1) {
                 $groups['council']->addMember($newMember);
@@ -70,7 +70,7 @@ class RpgFixtures extends Fixture implements FixtureGroupInterface
 
         for ($i_member = 0; $i_member < $memberBySpecGroup; $i_member++) {
             $newMember = new Member();
-            $newMember->setName($this->faker->name);
+            $newMember->setName($this->faker->name());
             $groups['builder']->addMember($newMember);
             if ($i_member == 0 || $i_member == 1) {
                 $groups['council']->addMember($newMember);
@@ -79,7 +79,7 @@ class RpgFixtures extends Fixture implements FixtureGroupInterface
 
         for ($i_member = 0; $i_member < $memberBySpecGroup; $i_member++) {
             $newMember = new Member();
-            $newMember->setName($this->faker->name);
+            $newMember->setName($this->faker->name());
             $groups['fisher']->addMember($newMember);
             if ($i_member == 0 || $i_member == 1) {
                 $groups['council']->addMember($newMember);
@@ -88,7 +88,7 @@ class RpgFixtures extends Fixture implements FixtureGroupInterface
 
         for ($i_member = 0; $i_member < $memberBySpecGroup; $i_member++) {
             $newMember = new Member();
-            $newMember->setName($this->faker->name);
+            $newMember->setName($this->faker->name());
             $groups['noble']->addMember($newMember);
             if ($i_member == 0 || $i_member == 1) {
                 $groups['council']->addMember($newMember);

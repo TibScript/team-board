@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
         $how_much_member = 10;
         for ($i_member = 0; $i_member < $how_much_member; $i_member++) {
             $user[] = new Member();
-            $user[$i_member]->setName($this->faker->name);
+            $user[$i_member]->setName($this->faker->name());
         }
 
         for ($i_member = 0; $i_member < $how_much_member; $i_member++) {

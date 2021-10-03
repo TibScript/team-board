@@ -1,7 +1,3 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-
-app_teamboard:
-    path: /teamboard
-    controller: App\Controller\TeamBoardController::index

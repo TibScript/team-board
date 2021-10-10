@@ -32,7 +32,14 @@ class GetGroups
 
   public function getAllRootGroupsInPhpArray()
   {
-    return [];
+    $groups = $this->groupRepository->findAllRoot();
+    return $this->normalizedGroups(
+      $groups,
+      [
+        'group:detail',
+        'member:detail'
+      ]
+    );
   }
 
   public function getAllGroupsInPhpArray()

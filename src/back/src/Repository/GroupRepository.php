@@ -19,6 +19,19 @@ class GroupRepository extends ServiceEntityRepository
         parent::__construct($registry, Group::class);
     }
 
+    /**
+     * @return Group[] Returns an array of Group objects
+     */
+    public function findAllRoot()
+    {
+        return $this->createQueryBuilder('g')
+            ->andWhere('g.imGroot = :val')
+            ->setParameter('val', true)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Group[] Returns an array of Group objects
     //  */

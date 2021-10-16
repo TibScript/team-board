@@ -47,7 +47,7 @@ class GroupsController extends AbstractController
         GetResponses $getResponses
     ): Response {
         return $getResponses->fromPhpArrayToJsonResponses(
-            $getGroup->getOneGroupsInPhpArray($id)
+            $getGroup->getOneGroupInPhpArray($id)
         );
     }
 }
